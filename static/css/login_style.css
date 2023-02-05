@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: whitesmoke;
+}
+
+.box{
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background-color: #050516;
+    border-radius: 10px;
+    overflow: hidden; 
+
+}
+
+.box::before{
+    content: '';
+    top: -50%;
+    left: -50%;
+    position: absolute;
+    width: 400px;
+    height: 450px;
+    background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+    animation: animate 6s linear infinite;
+    transform-origin: bottom right;
+}
+
+.box::after{
+    content: '';
+    top: -50%;
+    left: -50%;
+    position: absolute;
+    width: 400px;
+    height: 450px;
+    background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.form{
+    position: absolute;
+    inset: 3px;
+    background-color:#08021b;
+    z-index: 10;
+    border-radius: 10px;
+    padding: 50px 50px;
+    display: flex;
+    flex-direction: column;
+    color: whitesmoke;
+    letter-spacing: 0.05em;
+}
+
+.form h2{
+    text-align: center;
+    color: azure;
+    font-size: 30px;
+    font-weight: 500px;
+    letter-spacing: 0.1em;
+    cursor:default;
+}   
+
+.input_Box{
+    position: relative;
+    width: 300px;
+    margin-top: 35px;
+    cursor:default;
+}
+
+
+.input_Box input{ 
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background-color: #08021b9d;
+    border: 1px solid #0e0431;
+    margin: 10px 0px;
+    letter-spacing: 0.05em;
+    color:whitesmoke;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+.form input[type="submit"]
+{
+    border:0;
+    outline: 0;
+    background: whitesmoke;
+    letter-spacing: 0.05em;
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 15px 25px;
+    color:#050516;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 300px;
+    cursor: pointer;
+}
