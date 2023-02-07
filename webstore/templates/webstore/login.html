@@ -1,8 +1,10 @@
-{% extends 'base.html' %}
+{% extends 'webstore/base.html' %}
+{% load static %}
 
 {% block head %}
-<link rel="stylesheet" href="{{ url_for('static',filename='css/login.css')}}" type="text/css">
+<link rel="stylesheet" href="{% static 'webstore/css/login_style.css' %}", type="text/css">
 {% endblock %}
+
 
 {% block content %}
             <div class="box">
