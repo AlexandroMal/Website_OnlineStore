@@ -2,6 +2,7 @@
 .main-menu{
     text-align: center;
     justify-content: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     display: flex;
     margin: 5px 10px;
     padding: 0%;
@@ -20,10 +21,10 @@
     cursor: pointer;
 }
 
-.article .container{
+.article .body{
     height: 100%;
-    padding: 0px 10px;
-    display: flex;
+    padding: 0px 200px;
+    display: block;
     text-align: center;
     justify-content: center;
 
