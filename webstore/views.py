@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
+from .models import *
 
 # Create your views here.
 
 def index(request): 
-    return render(request, 'webstore/index.html', {'title': 'Webstore'})
+    announcement = telephones_Base.objects.all()
+    return render(request, 'webstore/index.html', {'title': 'Webstore', 'announcement': announcement})
 
 def login(request):
     return render(request, 'webstore/login.html', {'title': 'Sign in'})
