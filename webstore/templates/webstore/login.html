@@ -2,11 +2,12 @@
 {% load static %}
 
 {% block head %}
-<link rel="stylesheet" href="{% static 'webstore/css/login_style.css' %}", type="text/css">
+<link rel="stylesheet" href="{% static 'webstore/css/style_login.css' %}", type="text/css">
 {% endblock %}
 
 
 {% block content %}
+        <div class="login_container">
             <div class="box">
                 <form action="#" class="form">
                     <h2>Sign In</h2>
@@ -21,4 +22,5 @@
                     <input type="submit" value="Login">
                 </form>
             </div>
+        </div>
 {% endblock %}

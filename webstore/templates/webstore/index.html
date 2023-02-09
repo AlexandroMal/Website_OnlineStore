@@ -10,7 +10,7 @@
 {% block content %}
 </head>
     <body>
-        <nav class="container">
+        <nav class="nav_menu">
             <ul class="main-menu" >
                 <li><a href="#"></a>MOBILE PHONES</li>
                 <li><a href="#"></a>TV</li>
@@ -21,39 +21,23 @@
             </ul>
         </nav>
             <article class="article">
-                <div class="container">
+                <div class="body">
+                    
+                    {% for a in announcement %}
+    
                     <div class="devices">
-                        <div class="cards_image">
-                            <img src="/static/webstore/images/csm_xiaomi.png" alt="">
-                        </div>
-                        <h3>Telephone</h3>
-                        <p>$</p>
-                        <button>Add in Barset</button>
-                    </div>
-                    <div class="devices">
-                        <div class="cards_image">
-                            <img src="/static/webstore/images/166432_1578649992_1.jpg" alt="">
-                        </div>
-                        <h3>Telephone</h3>
-                        <p>$</p>
-                        <button>Add in Barset</button>
-                    </div>
-                    <div class="devices">
-                        <div class="cards_image">
-                            <img src="#" alt="">
-                        </div>
-                        <h3>Telephone</h3>
-                        <p>$</p>
-                        <button>Add in Barset</button>
-                    </div>
-                    <div class="devices">
-                        <div class="cards_image">
-                            <img src="#" alt="">
-                        </div>
-                        <h3>Telephone</h3>
-                        <p>$</p>
+                        <a href="#">
+                            <div class="cards_image">
+                                <img src="{{ a.img_full.url }}" alt="{{a.title}}">
+                            </div>
+                            <h3>{{a.title}}</h3>
+                            <p>{{a.price}} ₴</p>
+                        </a>
                         <button>Add in Barset</button>
                     </div>   
+                    {% endfor %}
+
+
              </div>
             </article>
 
