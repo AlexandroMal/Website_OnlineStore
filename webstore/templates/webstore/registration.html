@@ -1,0 +1,33 @@
+{% extends 'webstore/base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'webstore/css/style_reg.css' %}", type="text/css">
+{% endblock %}
+
+{% block content %}
+        <div class="reg_container">
+            <div class="box">
+                <form action="#" class="form">
+                    <h2>Sign Up</h2>
+                    <div class="input_Box">
+                        <span>Enter your login</span>
+                        <input type="text" placeholder="Username">
+                    </div>
+                    <div class="input_Box">
+                        <span>Enter your gmail</span>
+                        <input type="email" placeholder="Email@gmail.com">
+                    </div>
+                    <div class="input_Box">
+                        <span>Enter your password</span>
+                        <input type="password" placeholder="Enter password">
+                    </div>
+                    <div class="input_Box">
+                        <span>Enter your password again</span>
+                        <input type="password" placeholder="Enter password">
+                    </div>
+                    <input type="submit" value="Register">
+                </form>
+            </div>
+        </div>
+{% endblock %}
