@@ -3,7 +3,7 @@
 
 
     {% block head %}
-    <link rel="stylesheet" href="{% static 'webstore/css/store_style.css' %}", type="text/css">
+    <link rel="stylesheet" href="{% static 'webstore/css/style_store.css'  %}", type="text/css">
     {% endblock %}
 
 
@@ -12,12 +12,9 @@
     <body>
         <nav class="nav_menu">
             <ul class="main-menu" >
-                <li><a href="#"></a>MOBILE PHONES</li>
-                <li><a href="#"></a>TV</li>
-                <li><a href="#"></a>LAPTOPS</li>
-                <li><a href="#"></a>GAMING CONSOLE</li>
-                <li><a href="#"></a>TV</li>
-                <li><a href="#"></a>DESKTOP</li>
+                {% for cat in categories %}
+                <li><a href="{{cat.get_url}}">{{cat.name}}</a></li>
+                {% endfor %}
             </ul>
         </nav>
             <article class="article">
@@ -30,6 +27,7 @@
                             <div class="cards_image">
                                 <img src="{{ a.img_full.url }}" alt="{{a.title}}">
                             </div>
+                            
                             <h3>{{a.title}}</h3>
                             <p>{{a.price}} ₴</p>
                         </a>
