@@ -7,7 +7,6 @@ from .models import *
 def index(request): 
     announcement = product_data.objects.all()
     categories = Category.objects.all()
-    print(categories)
     context = {
         'title' : 'Webstore',
         'categories': categories,
@@ -19,14 +18,20 @@ def index(request):
 def category_show(request, cat_id):
     announcement = product_data.objects.filter(category=cat_id)
     categories = Category.objects.all()
-    print(categories)
     context = {
         'title' : 'Category',
         'categories': categories,
         'announcement': announcement,    
     }
-    
     return render(request,'webstore/index.html', context=context)
+
+def post_show(request, id):
+    announcement = product_data.objects.filter(id=id)
+    context = {
+        'title' : id,
+        'announcement': announcement,    
+    }
+    return render(request,'webstore/post.html', context=context)
 
 def login_user(request):
     return render(request, 'webstore/login.html', {'title': 'Sign in'})
