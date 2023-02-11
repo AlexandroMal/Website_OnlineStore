@@ -4,15 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <title>{{title}}</title>
-    <link rel="stylesheet" href="{% static 'webstore/css/styles.css' %}", type="text/css">
+    <link rel="stylesheet" href="{% static 'webstore/css/style.css' %}", type="text/css">
         {% block head %}
 
         {% endblock %}
 
 </head>
     <body>
-        <header> 
-            <nav class="container">
+        <header>
+            <nav class="nav_container">
+
                 <div class="logo_menu"> 
                     <a href="{% url 'home_page' %}" class="navbar-brand">Website</a>
                 </div>
@@ -20,10 +21,12 @@
                 <div class="top_menu">
                     <ul>
                         <li><a href="#">About me</a></li>
-                        <li><a href='{% url "login_page" %}'>Sign in</a></li>
                         <li><a href="#">My basket</a></li>
+                        <li><a href='{% url "login_page" %}'>Sign in</a></li> | <li><a href='{% url "registration_page" %}'>Sign up</a></li> 
+                        
                     </ul>
                 </div>
+
             </nav>
         </header> 
         {% block content %}
