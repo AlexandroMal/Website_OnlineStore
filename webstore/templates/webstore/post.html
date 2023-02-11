@@ -1,0 +1,29 @@
+{% extends 'webstore/base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'webstore/css/style_post.css' %}", type="text/css">
+{% endblock %}
+
+
+{% block content %}
+    {% for data in announcement %}
+    <div class="post_body">
+        <div class="img_container">
+            <img src="{{ data.img_full.url }}" alt="#">
+        </div>
+        <h2>
+            {{data.title}}
+        </h2>
+        <div class="content_container">
+            <div class="text_container">
+            {{data.description}}
+            </div>
+            <p>{{data.price}} ₴</p>
+            <button>Add in Barset</button>
+        </div>
+    </div>
+    {% endfor %}
+
+{% endblock %}
+
