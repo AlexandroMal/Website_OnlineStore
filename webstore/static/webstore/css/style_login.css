@@ -1,13 +1,13 @@
-
-.login_container{
+.log_container{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: rgb(195, 192, 192);
+    background: white;
 }
 
-.box{
+
+.log_box{
     position: relative;
     width: 400px;
     height: 450px;
@@ -17,7 +17,7 @@
 
 }
 
-.box::before{
+.log_box::before{
     content: '';
     top: -50%;
     left: -50%;
@@ -29,7 +29,7 @@
     transform-origin: bottom right;
 }
 
-.box::after{
+.log_box::after{
     content: '';
     top: -50%;
     left: -50%;
