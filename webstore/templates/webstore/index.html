@@ -3,7 +3,7 @@
 
 
     {% block head %}
-    <link rel="stylesheet" href="{% static 'webstore/css/style_store.css'  %}", type="text/css">
+
     {% endblock %}
 
 
@@ -12,6 +12,7 @@
     <body>
         <nav class="nav_menu">
             <ul class="main-menu" >
+                <li><a href="{% url 'home_page' %}">All Category</a></li>
                 {% for cat in categories %}
                 <li><a href="{{cat.get_url}}">{{cat.name}}</a></li>
                 {% endfor %}
@@ -23,12 +24,12 @@
                     {% for a in announcement %}
     
                     <div class="devices">
-                        <a href="#">
+                        <a href="{% url 'post' a.pk %}">
                             <div class="cards_image">
                                 <img src="{{ a.img_full.url }}" alt="{{a.title}}">
                             </div>
                             
-                            <h3>{{a.title}}</h3>
+                            <h3>{{a.title}}</h3>    
                             <p>{{a.price}} ₴</p>
                         </a>
                         <button>Add in Barset</button>
