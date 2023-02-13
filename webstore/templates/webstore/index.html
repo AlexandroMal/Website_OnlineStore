@@ -24,7 +24,7 @@
                     {% for a in announcement %}
     
                     <div class="devices">
-                        <a href="{% url 'post' a.pk %}">
+                        <a href="{{ a.get_url }}">
                             <div class="cards_image">
                                 <img src="{{ a.img_full.url }}" alt="{{a.title}}">
                             </div>

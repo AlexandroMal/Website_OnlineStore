@@ -7,23 +7,23 @@
 
 
 {% block content %}
-    {% for data in announcement %}
     <div class="post_body">
         <div class="img_container">
-            <img src="{{ data.img_full.url }}" alt="#">
+            {% if announcement.img_full %}
+            <img src="{{ announcement.img_full.url }}" alt="#">
+            {% endif %}
         </div>
         <h2>
-            {{data.title}}
+            {{announcement.title}}
         </h2>
         <div class="content_container">
             <div class="text_container">
-            {{data.description}}
+            {{announcement.description}}
             </div>
-            <p>{{data.price}} ₴</p>
+            <p>{{announcement.price}} ₴</p>
             <button>Add in Barset</button>
         </div>
     </div>
-    {% endfor %}
 
 {% endblock %}
 

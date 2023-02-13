@@ -90,7 +90,7 @@ header .nav_container{
 
 .article .body{
     height: 100%;
-    padding: 0px 200px;
+    margin: 0px 200px;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
@@ -98,9 +98,9 @@ header .nav_container{
 }
 
 .cards_image{
-    margin:5px;
-    height: 250px;
-    width: 270px;
+    margin:10px;
+    height: 300px;
+    width: 300px;
     overflow: hidden;
     border-radius: 5px;
 }
@@ -113,8 +113,8 @@ header .nav_container{
 
 .devices{
     border: 2px solid  rgb(16, 6, 47);
-    width: 300px;
-    height: 400px;
+    width: 320px;
+    height: 470px;
     display:block;
     margin: 20px;
 }
@@ -124,4 +124,26 @@ header .nav_container{
     color: black;
 }
 
+.devices p{
+    font-size: 20px;
+    color: black;
+    margin: 5px;
+}
 
+.devices button{
+    font-size: 20px;
+    color: black;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.devices button:hover{
+    font-size: 20px;
+    background-color: #050516;;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 5px;
+    color: aliceblue;
+    cursor: pointer;
+}
