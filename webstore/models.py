@@ -3,6 +3,7 @@ from django.urls import reverse
 
 class product_data(models.Model):
     title = models.CharField(max_length=50)
+    slug = models.SlugField(max_length=50, unique=True, db_index=True)
     description = models.CharField(max_length=255)
     price = models.CharField(max_length=15)
     quantity = models.PositiveIntegerField(default=0)
@@ -11,9 +12,13 @@ class product_data(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def get_url(self):
+        return reverse ('post', kwargs={'slug_post': self.slug})
 
 class Category(models.Model):
     name = models.CharField(max_length=50)
+    slug = models.SlugField(max_length=50, unique=True, db_index=True)
     
     def __str__(self):
         return self.name

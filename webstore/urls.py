@@ -6,7 +6,7 @@ urlpatterns = [
     path('login/', login_user, name="login_page"),
     path('registration/', register_user, name="registration_page"),
     path('category/<int:cat_id>/', category_show, name="category"),
-    path('post/<int:id>/', post_show, name="post"),
+    path('post/<slug:slug_post>/', post_show, name="post"),
     
 ]
 

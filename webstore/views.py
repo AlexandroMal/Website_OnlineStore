@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseNotFound
 from .models import *
 
@@ -25,10 +25,10 @@ def category_show(request, cat_id):
     }
     return render(request,'webstore/index.html', context=context)
 
-def post_show(request, id):
-    announcement = product_data.objects.filter(id=id)
+def post_show(request, slug_post):
+    announcement = get_object_or_404(product_data, slug=slug_post)
     context = {
-        'title' : id,
+        'title' : announcement.title,
         'announcement': announcement,    
     }
     return render(request,'webstore/post.html', context=context)
