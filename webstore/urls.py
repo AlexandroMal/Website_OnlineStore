@@ -2,11 +2,11 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    path('', index, name="home_page"),
+    path('', WebstoreHome.as_view(), name="home_page"),
     path('login/', login_user, name="login_page"),
-    path('registration/', register_user, name="registration_page"),
-    path('category/<int:cat_id>/', category_show, name="category"),
-    path('post/<slug:slug_post>/', post_show, name="post"),
+    path('register/', RegisterUser.as_view(), name="registration_page"),
+    path('category/<slug:cat_slug>/', ShowCategory.as_view(), name="category"),
+    path('post/<slug:slug_post>/', ShowPost.as_view(), name="post"),
     
 ]
 
