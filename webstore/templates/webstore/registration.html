@@ -8,24 +8,20 @@
 {% block content %}
         <div class="reg_container">
             <div class="reg_box">
-                <form action="#" class="form">
+
+                <form class="form" method="POST">
                     <h2>Sign Up</h2>
-                    <div class="input_Box">
-                        <span>Enter your login</span>
-                        <input type="text" placeholder="Username">
-                    </div>
-                    <div class="input_Box">
-                        <span>Enter your gmail</span>
-                        <input type="email" placeholder="Email@gmail.com">
-                    </div>
-                    <div class="input_Box">
-                        <span>Enter your password</span>
-                        <input type="password" placeholder="Enter password">
-                    </div>
-                    <div class="input_Box">
-                        <span>Enter your password again</span>
-                        <input type="password" placeholder="Enter password">
-                    </div>
+                        {% csrf_token %}
+
+                        {% for a in form %}
+                        <div class="input_Box">
+                            <label>{{a.label}}:</label>
+                            {{a}}
+        
+                        </div>      
+                        {% endfor %}
+
+                    
                     <input type="submit" value="Register">
                 </form>
             </div>
