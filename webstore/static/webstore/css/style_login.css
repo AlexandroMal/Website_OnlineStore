@@ -2,14 +2,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 80vh;
     background: white;
 }
 
 
 .log_box{
     position: relative;
-    width: 400px;
+    width: 405px;
     height: 450px;
     background-color: #050516;
     border-radius: 10px;
@@ -57,11 +57,12 @@
     background-color:#08021b;
     z-index: 10;
     border-radius: 10px;
-    padding: 50px 50px;
+    padding: 50px 45px;
     display: flex;
     flex-direction: column;
     color: whitesmoke;
     letter-spacing: 0.05em;
+    align-items: center ;
 }
 
 .form h2{
@@ -84,7 +85,7 @@
 .input_Box input{ 
     position: relative;
     width: 100%;
-    padding: 20px 10px 10px;
+    padding: 15px 0px 10px 5px;
     background-color: #08021b9d;
     border: 1px solid #0e0431;
     margin: 10px 0px;
@@ -101,10 +102,23 @@
     background: whitesmoke;
     letter-spacing: 0.05em;
     font-family:Arial, Helvetica, sans-serif;
-    padding: 15px 25px;
+    padding: 15px 5px 10px 5px;
     color:#050516;
     border-radius: 10px;
     margin-top: 20px;
-    width: 300px;
+    width: 305px;
+}
+
+.form input[type="submit"]:hover{
+    border:0;
+    outline: 0;
+    background: whitesmoke;
+    letter-spacing: 0.05em;
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 15px 5px 10px 5px;
+    color:#050516;
+    border-radius: 10px;
+    margin-top: 20px;   
+    width: 305px;
     cursor: pointer;
 }
