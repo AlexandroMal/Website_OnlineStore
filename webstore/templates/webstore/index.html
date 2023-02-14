@@ -1,10 +1,7 @@
 {% extends 'webstore/base.html' %}
 {% load static %}
+{% load webstore_tags %}
 
-
-    {% block head %}
-
-    {% endblock %}
 
 
 {% block content %}
@@ -13,8 +10,10 @@
         <nav class="nav_menu">
             <ul class="main-menu" >
                 <li><a href="{% url 'home_page' %}">All Category</a></li>
+
+                {% get_categories as categories %}
                 {% for cat in categories %}
-                <li><a href="{{cat.get_url}}">{{cat.name}}</a></li>
+                <li><a href="{{cat.get_absolute_url }}">{{cat.name}}</a></li>
                 {% endfor %}
             </ul>
         </nav>
@@ -24,7 +23,7 @@
                     {% for a in announcement %}
     
                     <div class="devices">
-                        <a href="{{ a.get_url }}">
+                        <a href="{{ a.get_absolute_url }}">
                             <div class="cards_image">
                                 <img src="{{ a.img_full.url }}" alt="{{a.title}}">
                             </div>

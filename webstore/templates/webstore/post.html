@@ -9,18 +9,18 @@
 {% block content %}
     <div class="post_body">
         <div class="img_container">
-            {% if announcement.img_full %}
-            <img src="{{ announcement.img_full.url }}" alt="#">
+            {% if post.img_full %}
+            <img src="{{ post.img_full.url }}" alt="#">
             {% endif %}
         </div>
         <h2>
-            {{announcement.title}}
+            {{post.title}}
         </h2>
         <div class="content_container">
             <div class="text_container">
-            {{announcement.description}}
+            {{post.description}}
             </div>
-            <p>{{announcement.price}} ₴</p>
+            <p>{{post.price}} ₴</p>
             <button>Add in Barset</button>
         </div>
     </div>
