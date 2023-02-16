@@ -13,10 +13,15 @@
                     <h2>Sign Up</h2>
                         {% csrf_token %}
 
+                        <div class="errors_info">
+                            {{form.non_field_errors}}
+                        </div>
+                        
                         {% for a in form %}
                         <div class="input_Box">
                             <label>{{a.label}}:</label>
                             {{a}}
+                            {{a.errors}}
         
                         </div>      
                         {% endfor %}
