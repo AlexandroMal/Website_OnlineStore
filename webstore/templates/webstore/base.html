@@ -21,8 +21,12 @@
                     <ul>
                         <li><a href="#">About me</a></li>
                         <li><a href="#">My basket</a></li>
-                        <li><a href='{% url "login_page" %}'>Sign in</a></li> | <li><a href='{% url "registration_page" %}'>Sign up</a></li> 
-                        
+
+                            {% if request.user.is_authenticated %}
+                            <li><a href="#">{{user.username}}</a></li> | <li><a href="{% url 'logout' %}">Exit</a></li>
+                            {% else %}
+                            <li><a href='{% url "login_page" %}'>Sign in</a></li> | <li><a href='{% url "registration_page" %}'>Sign up</a></li> 
+                            {% endif %}
                     </ul>
                 </div>
 
