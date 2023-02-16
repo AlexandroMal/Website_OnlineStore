@@ -2,19 +2,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 80vh;
     background: white;
 }
 
 .reg_box{
     position: relative;
     width: 400px;
-    height: 600px;  
+    height: 650px;  
     background-color: #050516;
     border-radius: 10px;
     overflow: hidden; 
-
 }
+
+
+.input_Box li{
+    color: rgb(220, 19, 16);
+    list-style-type: none;
+}
+
 
 .reg_box::before{
     content: '';
