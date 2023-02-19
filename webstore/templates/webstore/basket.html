@@ -1,0 +1,60 @@
+{% extends 'webstore/base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'webstore/css/style_cart.css' %}", type="text/css">
+{% endblock %}
+
+{% block content %}
+<div>
+    <p>
+    {{request.session.keys}}
+    {{request.session.cart}}
+    </p>
+</div>
+
+  <div class="cart_body">
+    <h1>Product List</h1>
+      {% if products %}
+  
+      {% for product in products %}
+      <div class="cart">
+
+        <div class="img_container">
+          {% if product.img_full %}
+          <img src="{{ product.img_full.url }}" alt="#">
+          {% endif %}
+        </div>
+
+          <div class="cart_content">
+            <p>{{ product.title }}</p>
+            <p>{{ product.price }}</p>
+          </div>
+
+            <form action="{% url 'cart:remove' product.pk %}" method="POST">{% csrf_token %}
+              <input type="hidden" name="url_from" value="{{request.path}}">
+              <button type="submit">Remove from cart</button>
+            </form>
+      </div>
+      {% endfor %}
+        
+  </div>
+
+
+    <div class="cart_buttons">
+        <form class="delete_all" action="{% url 'cart:delete' %}" method="POST">{% csrf_token %}
+            <input type="hidden" name="url_from" value="{{request.path}}">
+            <button type="submit">Delete all</button>
+        </form>
+        <form class="checkout" action="#" method="POST">{% csrf_token %}
+          <input type="hidden" name="url_from" value="{{request.path}}">
+          <button type="submit">Checkout</button>
+      </form>
+      {% else %}
+        <p class="no_products">No products in cart</p>
+      {% endif %}
+
+
+
+         
+{% endblock %}
