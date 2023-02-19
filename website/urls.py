@@ -23,7 +23,8 @@ from website import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('webstore.urls'))
+    path('', include('webstore.urls')),
+    path('', include('cart.urls'))
 ]
 
 handler404 = pageNotFound
