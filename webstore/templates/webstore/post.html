@@ -21,7 +21,10 @@
             {{post.description}}
             </div>
             <p>{{post.price}} ₴</p>
-            <button>Add in Barset</button>
+            <form action="{% url 'cart:add' post.id %}" method="POST">{% csrf_token %}
+                <input type="hidden" name="url_from" value="{{request.path}}">
+                <button type="submit">Add to cart</button>
+            </form>
         </div>
     </div>
 
