@@ -21,7 +21,6 @@
                 <div class="body">
                     
                     {% for a in announcement %}
-    
                     <div class="devices">
                         <a href="{{ a.get_absolute_url }}">
                             <div class="cards_image">
@@ -31,7 +30,10 @@
                             <h3>{{a.title}}</h3>    
                             <p>{{a.price}} ₴</p>
                         </a>
-                        <button>Add in Barset</button>
+                        <form action="{% url 'cart:add' a.id %}" method="POST">{% csrf_token %}
+                            <input type="hidden" name="url_from" value="{{request.path}}">
+                            <button type="submit">Add to cart</button>
+                        </form>
                     </div>   
                     {% endfor %}
 
