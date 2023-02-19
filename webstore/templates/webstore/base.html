@@ -20,7 +20,7 @@
                 <div class="top_menu">
                     <ul>
                         <li><a href="#">About me</a></li>
-                        <li><a href="#">My basket</a></li>
+                        <li><a href="{% url 'cart:cart_list'%}">My cart</a></li>
 
                             {% if request.user.is_authenticated %}
                             <li><a href="#">{{user.username}}</a></li> | <li><a href="{% url 'logout' %}">Exit</a></li>
